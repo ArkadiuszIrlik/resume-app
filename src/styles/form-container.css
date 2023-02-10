@@ -25,7 +25,9 @@
   margin-bottom: 10px;
 }
 
-.form-field input {
+.form-field input,
+.form-field textarea
+ {
   border: 1px solid black;
   border-radius: 7px;
   width: 70%;
@@ -55,24 +57,24 @@
   height: 25px;
 }
 
-.education-list {
+.form-entry-list {
   padding: 0;
 }
 
-.education-list-item {
+.form-entry-list-item {
   list-style-type: none;
   padding: 0;
   border-bottom: 2px solid var(--clr-gray-600);
 }
 
-.education-header {
+.form-entry-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
 }
 
-.education-field .form-field:last-child {
+.form-entry-field .form-field:last-child {
   margin-bottom: 20px;
 }
 
@@ -81,7 +83,7 @@
   gap: 15px;
 }
 
-.add-education-button {
+.add-form-entry-button {
   margin-top: 30px;
   margin-left: auto;
   display: flex;

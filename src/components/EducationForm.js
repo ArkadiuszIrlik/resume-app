@@ -4,8 +4,12 @@ import plusIcon from './../img/icons/plus-icon.svg';
 import { useState } from 'react'
 
 export default function EducationForm({ formData, setFormData }) {
-  const [openStatus, setOpenStatus] = useState(formData.reduce((stateObject, education) => {
-    stateObject[education.id] = {isOpen: false,}
+  const [openStatus, setOpenStatus] = useState(formData.reduce((stateObject, education, index) => {
+    if (index === (formData.length - 1)) {
+      stateObject[education.id] = {isOpen: true,}
+    } else {
+      stateObject[education.id] = {isOpen: false,}
+    }
     return stateObject;
   }, {}));
 
@@ -14,13 +18,13 @@ export default function EducationForm({ formData, setFormData }) {
     <div className="form-container">
       <h1 className='form-header'>Education</h1>
 
-      <ul className='education-list'>
+      <ul className='form-entry-list'>
         {formData.map((education, index) => {
           return (
-            <li key={education.id} className='education-list-item'>
-              <div className='education-field'>
-                <div className='education-header'>
-                  <div className='education-summary'>
+            <li key={education.id} className='form-entry-list-item'>
+              <div className='form-entry-field'>
+                <div className='form-entry-header'>
+                  <div className='form-entry-summary'>
                     {(education.schoolName && education.degree) ? (
                           <h5>{education.degree} at {education.schoolName}</h5>
                     ) : (
@@ -53,7 +57,7 @@ export default function EducationForm({ formData, setFormData }) {
                     />
                     <img src={trashIcon} className='delete-field-icon' 
                     onClick={() => {
-                      if (window.confirm('Are you sure you want to remove this school?')) {
+                      if (window.confirm('Are you sure you want to remove this position?')) {
                         setFormData(formData.filter(item => item.id !== education.id))
                       }
                     }}
@@ -144,10 +148,31 @@ export default function EducationForm({ formData, setFormData }) {
         />
       </div>
       <div className='form-field'>
+        <label htmlFor={'city-' + index}>
+          City:
+        </label>
+        <input type='text' id={'city-' + index} 
+        value={education.city}
+        onChange={(e)=> {
+          setFormData(formData.map(item => {
+            if (item.id === education.id) {
+              return {
+                ...item,
+                city: e.target.value,
+              };
+            } else {
+              return item;
+            }
+          }))
+        }}
+        />
+      </div>
+      <div className='form-field'>
         <label htmlFor={'description-' + index}>
           Description:
         </label>
-        <input type='text' id={'description-' + index} 
+        <textarea type='text' id={'description-' + index} 
+        rows='5'
         value={education.description}
         onChange={(e)=> {
           setFormData(formData.map(item => {
@@ -161,7 +186,7 @@ export default function EducationForm({ formData, setFormData }) {
             }
           }))
         }}
-        />
+        ></textarea>
       </div>
       </>)
       }
@@ -170,7 +195,7 @@ export default function EducationForm({ formData, setFormData }) {
           )
         })}
       </ul>
-      <button type='button' className='add-education-button'
+      <button type='button' className='add-form-entry-button'
       onClick={() => {
         const nextId = crypto.randomUUID(); 
         setOpenStatus({...openStatus, [nextId]: {isOpen: true,}})
