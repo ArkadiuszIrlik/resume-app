@@ -44,12 +44,12 @@ body {
 }
 
 .ultrawide-container {
-  height: 100%;
+  margin: 0 auto;
   max-width: 3840px;
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
