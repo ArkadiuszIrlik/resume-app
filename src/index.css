@@ -53,6 +53,7 @@ body {
 
 .header {
   position: sticky;
+  z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
@@ -63,6 +64,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--clr-main-300);
 }
 
 .header .logo {
