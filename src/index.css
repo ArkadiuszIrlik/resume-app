@@ -31,6 +31,9 @@ p, h1, h2, h3, h4, h5, h6 {
   --filter-clr-blue: invert(72%) sepia(44%) saturate(1299%) hue-rotate(180deg) brightness(110%) contrast(114%);
   --clr-main-300: #F5F7FB;
   --clr-acc-300: #84DBFF;
+  --clr-sec-300: #F0E9FF;
+  --clr-sec-500: #E0D1FF;
+  --clr-gray-600: #C0C0C0;
 }
 
 #root {
