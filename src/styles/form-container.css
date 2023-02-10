@@ -1,0 +1,35 @@
+.form-container {
+  flex: 1;
+  width: 100%;
+  max-width: 35rem;
+  padding: 1rem 2rem;
+  background-color: var(--clr-sec-300);
+  border-radius: 20px;
+}
+
+.form-header {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 30px;
+}
+
+.form-field {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-container > *:last-child {
+  margin-bottom: 10px;
+}
+
+.form-field input {
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 70%;
+}
+
+/* * > .form-field + .form-field {
+  margin-top: 10px;
+} */
