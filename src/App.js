@@ -2,10 +2,17 @@ import briefcaseIcon from './img/icons/briefcase-icon.png';
 import userIcon from './img/icons/user-icon.png'
 import dropdownIcon from './img/icons/down-arrow-icon.png'
 import './App.css';
+import ResumeForm from './components/ResumeForm';
 import { useState } from 'react';
 
 
 function App() {
+  const [resumeData, setResumeData] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  function goToNextPage() {
+    setCurrentPage(currentPage + 1);
+  }
 
   return (
     <>
@@ -21,6 +28,11 @@ function App() {
             <img className='dropdown-icon' src={dropdownIcon} alt='More' />
           </div>
         </div>
+        {currentPage === 0 && <ResumeForm 
+        formData={resumeData}
+        setFormData={setResumeData}
+        onNext={goToNextPage}
+        />}
       </div>
     </>
   );
