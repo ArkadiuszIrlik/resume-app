@@ -72,6 +72,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
+  margin-left: 15px;
+}
+
+.form-entry-summary-header {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-entry-summary-date {
+  font-size: 0.9rem;
+  color: var(--clr-gray-800);
 }
 
 .form-entry-field .form-field:last-child {

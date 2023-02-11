@@ -13,7 +13,6 @@ export default function ResumeForm( {
 
   return (
     <div className='resume-form'>
-      {schoolList.map(school => <h2>{school.schoolName}</h2>)}
     <PersonalInfoForm
       formData={personalInformation}
       setFormData={setPersonalInformation}

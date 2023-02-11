@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Nunito+Sans:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Nunito+Sans:wght@600&family=Roboto:wght@400;500&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -34,6 +34,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --clr-sec-300: #F0E9FF;
   --clr-sec-500: #E0D1FF;
   --clr-gray-600: #C0C0C0;
+  --clr-gray-800: #5a5a5a;
 }
 
 #root {

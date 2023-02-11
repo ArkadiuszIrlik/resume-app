@@ -26,24 +26,24 @@ export default function EmploymentForm({ formData, setFormData }) {
                 <div className='form-entry-header'>
                   <div className='form-entry-summary'>
                     {(employment.employer && employment.jobTitle) ? (
-                          <h5>{employment.jobTitle} at {employment.employer}</h5>
+                          <h5 className='form-entry-summary-header'>{employment.jobTitle} at {employment.employer}</h5>
                     ) : (
                       (employment.employer) ? (
-                          <h5>{employment.employer}</h5>
+                          <h5 className='form-entry-summary-header'>{employment.employer}</h5>
                       ) : (
                         (employment.jobTitle) ? (
-                            <h5>{employment.jobTitle}</h5>
+                            <h5 className='form-entry-summary-header'>{employment.jobTitle}</h5>
                         ) : (
-                            <h5>(Not specified)</h5>
+                            <h5 className='form-entry-summary-header'>(Not specified)</h5>
                         )
                       )
                     )}
                     {(employment.startDate && employment.endDate) ? (
-                      <p>{employment.startDate + ' - ' + employment.endDate}</p>
+                      <p className='form-entry-summary-date'>{employment.startDate + ' - ' + employment.endDate}</p>
                     ) : ((employment.startDate) ? (
-                      <p>{employment.startDate}</p>
+                      <p className='form-entry-summary-date'>{employment.startDate}</p>
                     ) : (employment.endDate ? (
-                      <p>{employment.endDate}</p>
+                      <p className='form-entry-summary-date'>{employment.endDate}</p>
                     ) : (null)) )}
                   </div>
                   <div className="icon-wrapper">

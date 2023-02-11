@@ -26,24 +26,24 @@ export default function EducationForm({ formData, setFormData }) {
                 <div className='form-entry-header'>
                   <div className='form-entry-summary'>
                     {(education.schoolName && education.degree) ? (
-                          <h5>{education.degree} at {education.schoolName}</h5>
+                          <h5 className='form-entry-summary-header'>{education.degree} at {education.schoolName}</h5>
                     ) : (
                       (education.schoolName) ? (
-                          <h5>{education.schoolName}</h5>
+                          <h5 className='form-entry-summary-header'>{education.schoolName}</h5>
                       ) : (
                         (education.degree) ? (
-                            <h5>{education.degree}</h5>
+                            <h5 className='form-entry-summary-header'>{education.degree}</h5>
                         ) : (
-                            <h5>(Not specified)</h5>
+                            <h5 className='form-entry-summary-header'>(Not specified)</h5>
                         )
                       )
                     )}
                     {(education.startDate && education.endDate) ? (
-                      <p>{education.startDate + ' - ' + education.endDate}</p>
+                      <p className='form-entry-summary-date'>{education.startDate + ' - ' + education.endDate}</p>
                     ) : ((education.startDate) ? (
-                      <p>{education.startDate}</p>
+                      <p className='form-entry-summary-date'>{education.startDate}</p>
                     ) : (education.endDate ? (
-                      <p>{education.endDate}</p>
+                      <p className='form-entry-summary-date'>{education.endDate}</p>
                     ) : (null)) )}
                   </div>
                   <div className="icon-wrapper">
