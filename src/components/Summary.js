@@ -1,10 +1,12 @@
 import './../styles/Summary.css';
+import arrowLeftIcon from './../img/icons/arrow-left-icon.svg';
+import PageNavButton from './PageNavButton';
 
 export default function Summary({ 
   employmentList, setEmploymentList, schoolList, setSchoolList,
    personalInformation, setPersonalInformation, onBack }) {
   return (
-    <>
+    <div className='summary'>
     <div className='summary-container'>
       <h1 className='summary-title'>Summary</h1>
       <div className='summary-section'>
@@ -82,7 +84,7 @@ export default function Summary({
         </ul>
       </div>
     </div>
-    <button type='button' onClick={onBack}>Go Back</button>
-    </>
+    <PageNavButton onClick={onBack} className='align-left'><img src={arrowLeftIcon} className='forward-icon'/>Go Back</PageNavButton>
+    </div>
   )
 }

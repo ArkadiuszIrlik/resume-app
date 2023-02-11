@@ -4,6 +4,7 @@ import arrowRightIcon from './../img/icons/arrow-right-icon.svg'
 import PersonalInfoForm from './PersonalInfoForm';
 import EducationForm from './EducationForm';
 import EmploymentForm from './EmploymentForm';
+import PageNavButton from './PageNavButton';
 
 export default function ResumeForm( { 
   employmentList, setEmploymentList, schoolList, setSchoolList,
@@ -25,13 +26,10 @@ export default function ResumeForm( {
         formData={employmentList}
         setFormData={setEmploymentList}
     />
-    <button type='button' className='summary-button'
-    onClick={() => {
-
-      onNext();
-    }}
+    <PageNavButton className='right-align'
+    onClick={onNext}
     >
-      Summary<img src={arrowRightIcon} className='forward-icon'/></button>
+      Summary<img src={arrowRightIcon} className='forward-icon'/></PageNavButton>
     </div>
   )
 }
