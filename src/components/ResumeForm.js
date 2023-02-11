@@ -5,31 +5,10 @@ import PersonalInfoForm from './PersonalInfoForm';
 import EducationForm from './EducationForm';
 import EmploymentForm from './EmploymentForm';
 
-export default function ResumeForm( { formData, setFormData, onNext }) {
-  const [personalInformation, setPersonalInformation] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-  })
-  const [schoolList, setSchoolList] = useState([{
-    schoolName: '',
-    degree: '',
-    startDate: '',
-    endDate: '',
-    city: '',
-    description: '',
-    id: crypto.randomUUID(),
-  }]);
-  const [employmentList, setEmploymentList] = useState([{
-    jobTitle: '',
-    employer: '',
-    startDate: '',
-    endDate: '',
-    city: '',
-    description: '',
-    id: crypto.randomUUID(),
-  }]);
+export default function ResumeForm( { 
+  employmentList, setEmploymentList, schoolList, setSchoolList,
+   personalInformation, setPersonalInformation, onNext }) {
+
 
 
   return (
@@ -49,11 +28,7 @@ export default function ResumeForm( { formData, setFormData, onNext }) {
     />
     <button type='button' className='summary-button'
     onClick={() => {
-      setFormData({
-        personalInformation: personalInformation,
-        schoolList: schoolList,
-        employmentList: employmentList,
-      })
+
       onNext();
     }}
     >

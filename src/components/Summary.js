@@ -1,22 +1,24 @@
 import './../styles/Summary.css';
 
-export default function Summary({ formData, onBack }) {
+export default function Summary({ 
+  employmentList, setEmploymentList, schoolList, setSchoolList,
+   personalInformation, setPersonalInformation, onBack }) {
   return (
     <>
     <div className='summary-container'>
       <h1 className='summary-title'>Summary</h1>
       <div className='summary-section'>
         <h2 className='summary-subheader'>Personal Information</h2>
-        <p>Full name: {formData.personalInformation.firstName} {
-          formData.personalInformation.lastName
+        <p>Full name: {personalInformation.firstName} {
+          personalInformation.lastName
         }</p>
-        <p>Email address: {formData.personalInformation.email}</p>
-        <p>Phone number: {formData.personalInformation.phone}</p>
+        <p>Email address: {personalInformation.email}</p>
+        <p>Phone number: {personalInformation.phone}</p>
       </div>
       <div className='summary-section'>
         <h2 className='summary-subheader'>Education</h2>
         <ul className='data-entry-list'>
-          {formData.schoolList.map(education => {
+          {schoolList.map(education => {
             return (
               <li key={education.id}>
                 <div className='data-entry'>

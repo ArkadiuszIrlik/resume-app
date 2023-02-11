@@ -11,6 +11,31 @@ function App() {
   const [resumeData, setResumeData] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
 
+  const [personalInformation, setPersonalInformation] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+  })
+  const [schoolList, setSchoolList] = useState([{
+    schoolName: '',
+    degree: '',
+    startDate: '',
+    endDate: '',
+    city: '',
+    description: '',
+    id: crypto.randomUUID(),
+  }]);
+  const [employmentList, setEmploymentList] = useState([{
+    jobTitle: '',
+    employer: '',
+    startDate: '',
+    endDate: '',
+    city: '',
+    description: '',
+    id: crypto.randomUUID(),
+  }]);
+
   function goToPreviousPage() {
     setCurrentPage(currentPage - 1);
   }
@@ -35,12 +60,21 @@ function App() {
           </div>
         </div>
         {currentPage === 0 && <ResumeForm 
-        formData={resumeData}
-        setFormData={setResumeData}
+        employmentList={employmentList}
+        setEmploymentList={setEmploymentList}
+        personalInformation={personalInformation}
+        setPersonalInformation={setPersonalInformation}
+        schoolList={schoolList}
+        setSchoolList={setSchoolList}
         onNext={goToNextPage}
         />}
         {currentPage === 1 && <Summary 
-        formData={resumeData}
+        employmentList={employmentList}
+        setEmploymentList={setEmploymentList}
+        personalInformation={personalInformation}
+        setPersonalInformation={setPersonalInformation}
+        schoolList={schoolList}
+        setSchoolList={setSchoolList}
         onBack={goToPreviousPage}
         />}
       </div>
