@@ -3,12 +3,18 @@ import userIcon from './img/icons/user-icon.png'
 import dropdownIcon from './img/icons/down-arrow-icon.png'
 import './App.css';
 import ResumeForm from './components/ResumeForm';
+import Summary from './components/Summary';
 import { useState } from 'react';
 
 
 function App() {
   const [resumeData, setResumeData] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
+
+  function goToPreviousPage() {
+    setCurrentPage(currentPage - 1);
+  }
+
 
   function goToNextPage() {
     setCurrentPage(currentPage + 1);
@@ -32,6 +38,10 @@ function App() {
         formData={resumeData}
         setFormData={setResumeData}
         onNext={goToNextPage}
+        />}
+        {currentPage === 1 && <Summary 
+        formData={resumeData}
+        onBack={goToPreviousPage}
         />}
       </div>
     </>
